@@ -56,7 +56,7 @@ void *tutunVEkagit(void *){
 
         tutunSayisi += 1;
         kagitSayisi += 1;
-        printf("Masaya 1 tütün 1 kagit koyuyorum!   (t=%d,k=%d,ki=%d)\n", tutunSayisi, kibritSayisi, kagitSayisi);
+        printf("Masaya 1 tütün 1 kagit koyuyorum!     (t=%d,k=%d,ki=%d)\n", tutunSayisi, kibritSayisi, kagitSayisi);
         sem_post(&disla);
         sem_post(&tutturuyor);
         sleep(uni(rng));
@@ -68,7 +68,7 @@ void *tutunVEkibrit(void *){
         sem_wait(&tutturuyor);
         tutunSayisi += 1;
         kibritSayisi += 1;
-        printf("Masaya 1 tütün 1 kibrit koyuyorum!  (t=%d,k=%d,ki=%d)\n", tutunSayisi, kibritSayisi, kagitSayisi);
+        printf("Masaya 1 tütün 1 kibrit koyuyorum!    (t=%d,k=%d,ki=%d)\n", tutunSayisi, kibritSayisi, kagitSayisi);
         sem_post(&tutturuyor);
         sem_post(&disla);
         sleep(uni(rng));
@@ -80,7 +80,7 @@ void *kagitVEkibrit(void *){
         sem_wait(&tutturuyor);
         kagitSayisi += 1;
         kibritSayisi += 1;
-        printf("Masaya 1 kibrit 1 kagit koyuyorum!  (t=%d,k=%d,ki=%d)\n", tutunSayisi, kibritSayisi, kagitSayisi);
+        printf("Masaya 1 kibrit 1 kagit koyuyorum!    (t=%d,k=%d,ki=%d)\n", tutunSayisi, kibritSayisi, kagitSayisi);
         sem_post(&tutturuyor);
         sem_post(&disla);
         sleep(uni(rng));
@@ -95,7 +95,7 @@ void *iciyor(void *){
             tutunSayisi -= 1;
             kagitSayisi -= 1;
             kibritSayisi -= 1;
-            printf("%d.  içici tüttürüyor!   Geri kalan = t=%d,k=%d,ki=%d\n",i,tutunSayisi,kagitSayisi,kibritSayisi);
+            printf("%d.  içici tüttürüyor!   Geri kalan =   t=%d,k=%d,ki=%d\n",i,tutunSayisi,kagitSayisi,kibritSayisi);
             i+=1;
             sem_post(&disla);
             sem_post(&tutturuyor);
